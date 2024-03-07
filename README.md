@@ -1,6 +1,6 @@
 # Midterm p1: Report on Analysis of Fibonacci  Series
-* **Author**: Kavvya Veeramony
-* **GitHub Repo**: [linke to github repo with this report]
+* **Author**: Kavya Veeramony
+* **GitHub Repo**:(https://github.com/Sp24-CS5008-Online-Lionelle/midterm-KavyaVee00.git)
 * **Semester**: Spring 2024
 * **Languages Used**: c, Python
 
@@ -89,17 +89,164 @@ The operations count for C code:
 | 27    | 52           | 522                     | 635620     |
 | 28    | 54           | 54                     | 1028456     |
 
+Iterative Approach:
+When we calculate Fibonacci numbers iteratively, the number of steps increases steadily as we go higher in the sequence.
+For every increase in the Fibonacci index N, we see an additional 2 operations.
+This method is pretty straightforward and predictable. Each Fibonacci number takes a fixed number of additions and assignments to compute.
+
+Dynamic Programming Approach:
+With dynamic programming, the number of operations remains the same for each N.
+This technique stores previously calculated Fibonacci numbers in an array, which means we don't need to redo computations.
+So, regardless of how big N gets, the number of operations stays constant. The operation count for both Dynamic and Iterative are the same. 
+
+Recursive Approach:
+Here's where things get interesting. The number of operations shoots up really fast as N increases.
+This approach involves a lot of repeated recursive calls and recalculations, making it much slower for larger N values.
+It's conceptually simple, but it becomes pretty inefficient as N gets bigger.
 
 
+## Timings for C: 
+| **N** | **Iterative** | **Dynamic Programming** | **Recursive** |
+|-------|---------------:|-------------------------:|---------------:|
+1|0.000004,        |0.000002        |0.000002
+2|0.000001         |0.000001       |0.000001
+3|0.000000|0.000001|0.000002|
+4|0.000001|0.000002|0.000002|
+5|0.000002|0.000001|0.000001|
+6|0.000001|0.000001|0.000001|
+7|0.000002|0.000000,0.000002|
+8|0.000001|0.000002|0.000003|
+9|0.000002|0.000002|0.000003|
+10|0.000001|0.000001|0.000002|
+11|0.000000|0.000001|0.000003|
+12|0.000001|0.000002|0.000009|
+13|0.000002|0.000001|0.000004|
+14|0.000002|0.000001|0.000007|
+15|0.000002|0.000002|0.000010|
+16|0.000001|0.000001|0.000013|
+17|0.000001|0.000002|0.000024|
+18|0.000000|0.000001|0.000036|
+19|0.000001|0.000002|0.000056|
+20|0.000001|0.000002|0.000093|
+21|0.000000|0.000001|0.000146|
+22|0.000000|0.000001|0.000237|
+23|0.000001|0.000001|0.000378|
+24|0.000002|0.000000|0.000606|
+25|0.000002|0.000000|0.000989|
+26|0.000002|0.000001|0.001608|
+27|0.000001|0.000001|0.002589|
+28|0.000000|0.000001|0.004710|
+29|0.000002|0.000001|0.007800|
+30|0.000001|0.000001|0.011794|
+31|0.000002|0.000000|0.019333|
+32|0.000002|0.000002|0.030318|
+33|0.000001|0.000001|0.050615|
+34|0.000002|0.000001|0.081557|
+35|0.000001|0.000002|0.121736|
+36|0.000001|0.000001|0.192782|
+37|0.000002|0.000002|0.324212|
+38|0.000001|0.000002|0.515111|
+39|0.000001|0.000002|0.824204|
+40|0.000001|0.000001|1.327554|
+41|0.000002|0.000001|2.123652|
+42|0.000001|0.000001|3.442512|
+43|0.000003|0.000002|5.588105|
+44|0.000002|0.000002|8.827117|
+45|0.000002|0.000004|14.268852|
+46|0.000002|0.000002|23.197690|
+47|0.000002|0.000001|37.692939|
+48|0.000002|0.000001|61.184132|
+49|0.000001|0.000000|100.433627|
+50|0.000002|0.000002|165.314438|
 
+The data we gathered by running the code matches what we expected based on our understanding of the algorithms. The iterative and dynamic programming methods consistently show low timings, which makes sense since they're designed to be efficient, especially for larger values of n. 
 
-The data we gathered by running the code matches what we expected based on our understanding of the algorithms. The iterative and dynamic programming methods consistently show low timings, which makes sense since they're designed to be efficient, especially for larger values of n.
+- The iterative approach generally shows consistent and low execution times across different values of 'n'.
+As 'n' increases, the execution time also increases gradually, but the increase is relatively small and linear.
 
-On the other hand, the recursive approach takes significantly longer as n increases. This isn't surprising given its exponential time complexity. Essentially, as n grows, the recursive approach has to redo a lot of calculations, leading to longer execution times compared to the other methods.
+- The dynamic programming approach also exhibits consistent and relatively low execution times.
+Similar to the iterative approach, the dynamic programming approach shows gradual increases in execution time as 'n' increases.
+It performs slightly slower than the iterative approach but still maintains reasonable execution times even for larger values of 'n'.
 
-Apart from the algorithm itself, there are other factors that can affect runtime. Things like the speed of your computer's processor, how much memory is available, and even how the code is compiled can all have an impact. Additionally, the operating system's tasks like scheduling can also affect how quickly your code runs.
+On the other hand, the recursive approach takes significantly longer as n increases. The recursive approach shows significantly higher execution times compared to the iterative and dynamic programming approaches. As 'n' increases, the execution time grows exponentially, leading to much longer processing times for larger values of 'n'.This isn't surprising given its exponential time complexity. Essentially, as n grows, the recursive approach has to redo a lot of calculations, leading to longer execution times compared to the other methods. The recursive approach becomes increasingly inefficient for larger 'n' values due to the repeated computations and function calls.
 
+Apart from the algorithm itself, there are other factors that can affect runtime. Things like the speed of my computer's processor, how much memory is available, and even how the code is compiled can all have an impact. Additionally, the operating system's tasks like scheduling can also affect how quickly your code runs.
 
+Overall, the timings suggest that the iterative and dynamic programming approaches are more efficient for calculating Fibonacci numbers compared to the recursive approach, particularly for larger values of 'n'. The iterative approach is the fastest, followed by dynamic programming, while the recursive approach is the slowest and least efficient, especially for large 'n' values.
+
+## Timings for Python: 
+
+| **N** | **Iterative** | **Dynamic Programming** | **Recursive** |
+|-------|---------------|-------------------------|---------------|
+| 1 | 1.1920928955078125e-06 | 9.5367431640625e-07 | 0 |
+| 2 | 2.1457672119140625e-06 | 1.621246337890625e-05 | 4.0531158447265625e-06 |
+| 3 | 9.5367431640625e-07 | 1.0967254638671875e-05 | 2.86102294921875e-06 |
+| 4 | 1.1920928955078125e-06 | 1.1205673217773438e-05 | 4.0531158447265625e-06 |
+| 5 | 9.5367431640625e-07 | 1.9073486328125e-06 | 5.9604644775390625e-06 |
+| 6 | 9.5367431640625e-07 | 9.5367431640625e-07 | 1.2874603271484375e-05 |
+| 7 | 1.1920928955078125e-06 | 9.5367431640625e-07 | 2.002716064453125e-05 |
+| 8 | 9.5367431640625e-07 | 9.5367431640625e-07 | 3.790855407714844e-05 |
+| 9 | 9.5367431640625e-07 | 2.1457672119140625e-06 | 5.412101745605469e-05 |
+| 10 | 1.1920928955078125e-06 | 1.0013580322265625e-05 | 6.890296936035156e-05 |
+| 11 | 0.0 | 9.5367431640625e-07 | 8.20159912109375e-05 |
+| 12 | 1.1920928955078125e-06 | 1.9073486328125e-06 | 0.0001361370086669922 |
+| 13 | 9.5367431640625e-07 | 2.1457672119140625e-06 | 0.00039315223693847656 |
+| 14 | 7.152557373046875e-07 | 7.867813110351562e-06 | 0.00047206878662109375 |
+| 15 | 9.5367431640625e-07 | 1.9073486328125e-06 | 0.0008780956268310547 |
+| 16 | 9.5367431640625e-07 | 1.6927719116210938e-05 | 0.0011110305786132812 |
+| 17 | 1.1920928955078125e-06 | 2.1457672119140625e-06 | 0.0013952255249023438 |
+| 18 | 9.5367431640625e-07 | 1.0967254638671875e-05 | 0.0022592544555664062 |
+| 19 | 1.1920928955078125e-06 | 3.0994415283203125e-06 | 0.003718852996826172 |
+| 20 | 9.5367431640625e-07 | 8.821487426757812e-06 | 0.006916046142578125 |
+| 21 | 1.6689300537109375e-06 | 1.9073486328125e-06 | 0.010946035385131836 |
+| 22 | 1.1920928955078125e-06 | 3.0994415283203125e-06 | 0.01690816879272461 |
+| 23 | 9.5367431640625e-07 | 2.86102294921875e-06 | 0.03233695030212402 |
+| 24 | 2.1457672119140625e-06 | 1.811981201171875e-05 | 0.04691886901855469 |
+| 25 | 1.9073486328125e-06 | 2.86102294921875e-06 | 0.07357430458068848 |
+| 26 | 2.1457672119140625e-06 | 2.7179718017578125e-05 | 0.12831711769104004 |
+| 27 | 1.9073486328125e-06 | 1.8835067749023438e-05 | 0.19426393508911133 |
+| 28 | 8.821487426757812e-06 | 4.291534423828125e-06 | 0.3204989433288574 |
+| 29 | 3.0994415283203125e-06 | 1.0967254638671875e-05 | 0.5167279243469238 |
+| 30 | 4.0531158447265625e-06 | 3.0994415283203125e-06 | 0.848642110824585 |
+| 31 | 3.814697265625e-06 | 3.0994415283203125e-06 | 1.340763807296753 |
+| 32 | 5.245208740234375e-06 | 1.9073486328125e-05 | 2.3085482120513916 |
+| 33 | 3.814697265625e-06 | 4.0531158447265625e-06 | 3.5504071712493896 |
+| 34 | 5.245208740234375e-06 | 1.2636184692382812e-05 | 5.970300197601318 |
+| 35 | 4.76837158203125e-06 | 4.291534423828125e-06 | 9.4778733253479 |
+| 36 | 5.0067901611328125e-06 | 2.09808349609375e-05 | 15.338347911834717 |
+| 37 | 2.002716064453125e-05 | 4.0531158447265625e-06 | 24.612709045410156 |
+| 38 | 5.0067901611328125e-06 | 4.76837158203125e-06 | 40.01042580604553 |
+| 39 | 5.0067901611328125e-06 | 4.0531158447265625e-06 | 64.90412497520447 |
+| 40 | 5.0067901611328125e-06 | 2.09808349609375e-05 | 110.56338214874268 |
+
+After examining the practical results from running the code and recording timings for each Fibonacci calculation method, I noticed several key points:
+
+Iterative Approach: The iterative method consistently showed the fastest timings. This wasn't surprising, as it involves a straightforward loop-based calculation, which tends to be efficient.
+
+Dynamic Programming Approach: Timings for the dynamic programming method were generally higher than the iterative approach but lower than the recursive approach. Dynamic programming optimizes calculations by storing previously computed values, reducing redundant work.
+
+Recursive Approach: The recursive method consistently exhibited the slowest timings. This was expected, given that recursion involves repeated function calls and redundant calculations, resulting in slower execution.
+
+Consistency with Expectations: Overall, the runtime data aligned well with my initial analysis, with timings following the anticipated order: iterative < dynamic programming < recursive.
+
+Other Factors Impacting Runtime: Besides the algorithm, I also considered various real-world factors that could influence runtime, such as hardware capabilities, system load, compiler optimizations, input size, language overhead, and cache behavior.
+
+## Comparison of the timings of C and Python: 
+When comparing the Python and C timings for calculating Fibonacci numbers, it's pretty clear that C outpaces Python by a long shot. No matter the method—be it Iterative, Dynamic Programming, or Recursive—C consistently clocks in much faster across different input sizes (N).
+
+For example, let's take N=1. In C, the Iterative method takes a mere 0.000004 seconds, while in Python, it's about 1.192e-06 seconds. Even at N=10, the Dynamic Programming method in C zips through in 0.000001 seconds, while Python lags behind at 1.001e-05 seconds. And as N gets larger, this gap widens. Python's Recursive method starts to drag, taking several seconds for tasks that C handles in fractions of a second.
+
+These differences in execution time can be because of several factors, including:
+
+Language Efficiency: C is a compiled language known for its speed and efficiency, while Python is an interpreted language, which generally results in slower execution.
+
+Memory Management: C allows for more precise memory management, which can lead to faster performance, especially in tasks like Fibonacci calculations where memory usage can be significant.
+
+Algorithm Implementation: Although both languages use similar algorithms for Fibonacci calculations, differences in how the algorithms are implemented in each language can affect performance.
+
+Overhead: Python's dynamic typing and garbage collection introduce overhead that C does not have, which can impact execution time, especially for repetitive tasks like Fibonacci calculations.
+
+In summary, while both Python and C can be used for Fibonacci calculations, C generally offers faster execution times due to its compiled nature, efficient memory management, and lower overhead.
 
 ## Language Analysis
 
@@ -491,9 +638,27 @@ def fibonacci_dynamic_programming(n):
 ```
 
 ### Comparison and Discussion Between Experiences
+In my experience working with both C and Python, I've noticed some interesting differences, especially when it comes to tasks like calculating Fibonacci numbers. C is lightning-fast in executing these calculations, while Python tends to lag behind, especially when the computations get heavier. 
 
+Looking at the data I collected, it's clear that C outshines Python in terms of speed across all methods of calculating Fibonacci numbers. Whether it's using an iterative approach, dynamic programming, or recursion, C consistently finishes the calculations much faster than Python. Even for small values of N, C completes the task in a fraction of the time it takes Python.
+
+Overall, both implementations achieve the same goal of calculating Fibonacci numbers using different approaches. However, there are notable differences in the syntax, memory management, and execution time between C and Python.
+
+In C, I had to manage memory explicitly using arrays for dynamic programming, while in Python, memory management is handled automatically by the interpreter, making the code more concise and readable. However, this convenience in Python comes at a cost of performance, as C executes significantly faster due to its compiled nature and low-level memory access.
+
+During the implementation, I experimented with different optimization techniques, such as memoization in Python and loop unrolling in C, to improve the performance of the recursive approach. However, the gains were modest, and the recursive approach still lagged behind the iterative and dynamic programming approaches in terms of speed.
+
+In conclusion, while Python offers ease of development and readability, C shines in terms of performance and control. The choice between the two languages depends on the specific requirements of the project, balancing factors like speed, development time, and maintainability.
+
+In hindsight, I realize that I should have explored how the code handles larger values of n more thoroughly. While the current implementation works well for small  n values, it may encounter limitations as n grows significantly larger. For example, the recursive approach in Python is limited by the default recursion depth, which may lead to stack overflow errors for very large n values. Increasing the recursion limit using sys.setrecursionlimit() helps to some extent but isn't a scalable solution for extremely large n values. Additionally, considering alternative data structures or libraries specifically designed for handling large numerical computations, such as NumPy for Python, could have provided insights into optimizing performance and memory usage for larger n values.
+
+Overall, a deeper exploration of how the code handles larger n values and potential optimizations for scalability would have enhanced the robustness and applicability of the solutions across a wider range of use cases.
 
 ## Conclusions / Reflection
 
-## References
+Reflecting on this project, I've gained valuable insights into the differences between C and Python. It's clear that C offers blazing-fast performance, but at the expense of complexity. Python, on the other hand, prioritizes simplicity and readability, albeit with slower execution. Choosing the right language depends on the task at hand. For speed-critical projects like system programming, C is the way to go. Its efficiency and control over hardware make it indispensable. However, for quick development and maintenance, Python shines. Its extensive library and ease of use make it perfect for web development and data analysis. Ultimately, being proficient in both C and Python provides developers with a versatile toolkit. Whether optimizing for speed or readability, having multiple languages at your disposal allows for tailored solutions that meet project needs effectively. Reflecting on my experience, I acknowledge that I faced challenges in figuring out how to effectively handle larger values of n. While I made progress in implementing the Fibonacci algorithms and measuring their performance, I struggled to find optimal solutions for accommodating extremely large n values. This limitation served as a valuable learning experience, highlighting the importance of continuous improvement and problem-solving skills. 
 
+## References
+https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/ 
+
+https://en.wikipedia.org/wiki/Fibonacci
