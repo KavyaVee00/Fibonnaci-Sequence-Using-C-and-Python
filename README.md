@@ -5,7 +5,7 @@
 * **Languages Used**: c, Python
 
 ## Overview
-This report focuses on comparing the performance of different implementations of the Fibonacci series algorithm. The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones. It usually begins with 0 and 1, resulting in 0, 1, 1, 2, 3, 5, 8, and so forth. Each subsequent number is found by adding the two numbers before it. The goal is to analyze the time complexity and space complexity of three different approaches: iterative, recursive, and dynamic programming.
+This report focuses on comparing the performance of different implementations of the Fibonacci series algorithm using Python and C. The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones. It usually begins with 0 and 1, resulting in 0, 1, 1, 2, 3, 5, 8, and so forth. Each subsequent number is found by adding the two numbers before it. The goal is to analyze the time complexity and space complexity of three different approaches: iterative, recursive, and dynamic programming.
 
 A typical Fibonacci series looks like this:
 
